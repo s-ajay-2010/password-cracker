@@ -48,10 +48,8 @@ K = [
     0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,
 ]
 
-
-H = [0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19]
-
 def sha256(msg: bytes) -> str:
+    H = [0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19]
     message = pad_msg(msg)
 
     for block_start in range(0, len(message), 64):
@@ -89,9 +87,9 @@ def sha256(msg: bytes) -> str:
 
 
 
-m = input("enter: ")
+# m = input("enter: ")
 
-print(sha256(m.encode()))
+# print(sha256(m.encode()))
 
-import hashlib
-print(hashlib.sha256(m.encode()).hexdigest())
+# import hashlib
+# print(hashlib.sha256(m.encode()).hexdigest())

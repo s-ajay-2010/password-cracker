@@ -3,7 +3,7 @@ import sha256
 #fpi = file_path_input
 fpi = input("Enter the path to your password file: ")
 #fp = file_path
-fp = fpi.strip('/')
+fp = fpi.strip()
 #ih = input_hash
 ih = input("Enter the password: ")
 
@@ -19,7 +19,7 @@ def hasher(fp):
     ph = []
     for a in passwords:
         #ph = passwords_hashed
-        ph.append(sha256.sha256(e.encode()))
+        ph.append(sha256.sha256(a.encode()))
 
     return ph, passwords
 
