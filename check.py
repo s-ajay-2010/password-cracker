@@ -19,7 +19,7 @@ def hasher(fp):
     ph = []
     for a in passwords:
         #ph = passwords_hashed
-        ph.append(sha256.sha256(b"{a}"))
+        ph.append(sha256.sha256(e.encode()))
 
     return ph, passwords
 

@@ -64,8 +64,8 @@ def sha256(msg: bytes) -> str:
         a, b, c, d, e, f, g, h = H
 
         for i in range(64):
-            T1 = mod32(h, sigma0(e), ch(e, f, g), K[i], w[i])
-            T2 = mod32(sigma1(a), maj(a, b, c))
+            T1 = mod32(h, sigma1(e), ch(e, f, g), K[i], w[i])
+            T2 = mod32(sigma0(a), maj(a, b, c))
             h = g
             g = f
             f = e   
@@ -91,4 +91,7 @@ def sha256(msg: bytes) -> str:
 
 m = input("enter: ")
 
-print(sha256(b"{m}"))
+print(sha256(m.encode()))
+
+import hashlib
+print(hashlib.sha256(m.encode()).hexdigest())
