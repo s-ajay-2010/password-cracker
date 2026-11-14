@@ -1,15 +1,15 @@
 import sha256
 
 #fpi = file_path_input
-fpi = input("Enter the path to your password file: ")
+fpi = input("Enter the path to your wordlist file: ")
 #fp = file_path
 fp = fpi.strip()
 #ih = input_hash
-ih = input("Enter the password: ")
+ih = input("Enter the password has to crack: ")
 
 def hasher(fp):
     if fp.endswith(".txt") == False:
-        return "please give a .txt file"
+        return "please give a .txt file or use the wordlist given with the repo"
 
     passwords = []
     with open(fp, 'r') as file:
