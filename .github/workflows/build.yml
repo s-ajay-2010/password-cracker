@@ -19,13 +19,13 @@ jobs:
             asset-name: check-windows-x64.exe
           - os: macos-latest
             output: check
-            asset-name: check-macos-x64
+            asset-name: check-macos-arm64
           - os: ubuntu-24.04-arm
             output: check
             asset-name: check-linux-arm64
           - os: macos-13
             output: check
-            asset-name: check-macos-arm64
+            asset-name: check-macos-x64
 
     runs-on: ${{matrix.os}}
 
