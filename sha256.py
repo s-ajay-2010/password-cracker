@@ -1,5 +1,3 @@
-
-
 def pad_msg(msg: bytes):
     msg_len = len(msg) * 8
     msg += b'\x80'
@@ -84,12 +82,3 @@ def sha256(msg: bytes) -> str:
         H[7] = mod32(H[7], h)
 
     return ''.join(f"{x:08x}" for x in H)
-
-
-
-# m = input("enter: ")
-
-# print(sha256(m.encode()))
-
-# import hashlib
-# print(hashlib.sha256(m.encode()).hexdigest())

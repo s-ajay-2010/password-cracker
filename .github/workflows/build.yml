@@ -1,0 +1,55 @@
+name: build bin
+
+on:
+  push:
+    tags: 
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            output: check
+            asset-name: check-linux-x64
+          - os: windows-latest
+            output: check
+            asset-name: check-windows-x64.exe
+          - os: macos-latest
+            output: check
+            asset-name: check-macos-x64
+          - os: ubuntu-24.04-arm
+            output: check
+            asset-name: check-linux-arm64
+          - os: macos-13
+            output: check
+            asset-name: check-macos-arm64
+
+    runs-on: ${{matrix.os}}
+
+    steps:
+      - name: Checkout code
+        uses: action/checkout@v4
+      
+      - name: set up python
+        uses: action/setup-python@v5
+        with: 
+          python-version: '3.12'
+
+      - name: Install PyInstaller
+        run: pip install pyinstaller
+
+      - name: build bin
+        run: pyinstaller --onefile check.py sha256.py
+      
+      - name: name the bin correctly
+        shell: bash
+        run: mv dist/${{matrix.output}} dist/${{matrix.asset-name}}
+
+      - name: upload to repo
+        uses: action/upload-artifact@v4
+        with:
+          name: ${{matrix.asset-name}}
+          path: dist/${{matrix.asset-name}}
