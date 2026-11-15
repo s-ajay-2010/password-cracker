@@ -15,7 +15,9 @@ Djust enter the values it asks and you should be good to go!
 #
 
 ## Just expriencing the project
-Download the repo, unzip it, and open the check.py file with python.
+download the pre-compiled binaries from the releases and execute them in a terminal.
+
+for windows arm, download the repo, unzip it, and open the check.py file with python.
 
 # 
 
