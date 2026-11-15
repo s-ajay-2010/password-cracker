@@ -10,14 +10,15 @@ cd password-cracker
 python check.py
 ```
 that's all!
-Djust enter the values it asks and you should be good to go!
+
+just enter the values it asks and you should be good to go!
 
 #
 
 ## Just expriencing the project
 download the pre-compiled binaries from the releases and execute them in a terminal.
 
-for windows arm, download the repo, unzip it, and open the check.py file with python.
+for windows arm & macos x64, download the repo, unzip it, and open the check.py file with python.
 
 # 
 
